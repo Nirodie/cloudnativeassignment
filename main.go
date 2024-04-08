@@ -23,7 +23,7 @@ func enableCors(c *gin.Context) {
 func apiStats(c *gin.Context) {
 	enableCors(c)
 	totalGames, wins := data.Stats()
-	c.JSON(http.StatusOK, gin.H{"totalGames": totalGames, "wins, Hello": wins,})
+	c.JSON(http.StatusOK, gin.H{"totalGames": totalGames, "wins": wins,})
 }
 
 func apiPlay(c *gin.Context) {
