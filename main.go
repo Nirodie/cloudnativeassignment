@@ -8,7 +8,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"systementor.se/cloudgolangapi/data"
 )
-
+//halloj
 var config Config
 var theRandom *rand.Rand
 
