@@ -68,6 +68,11 @@ func randomizeSelection() string {
 
 }
 
+func onHealth(c* gin.Context){
+	c.Status(200)
+	c.Writer.Write([]byte("ok"))
+}
+
 func main() {
 	theRandom = rand.New(rand.NewSource(time.Now().UnixNano()))
 	readConfig(&config)
@@ -83,6 +88,7 @@ func main() {
 	router.GET("/", start)
 	router.GET("/api/play", apiPlay)
 	router.GET("/api/stats", apiStats)
+	router.GET("/healthz", onHealth)
 	// router.GET("/api/employee/:id", apiEmployeeById)
 	// router.PUT("/api/employee/:id", apiEmployeeUpdateById)
 	// router.DELETE("/api/employee/:id", apiEmployeeDeleteById)
